@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 95%;
+    --foreground: 180 10% 20%;
+
+    --card: 40 33% 98%;
+    --card-foreground: 180 10% 20%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 180 10% 20%;
+
+    --primary: 175 70% 41%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 33% 96%;
+    --secondary-foreground: 180 10% 20%;
+
+    --muted: 40 33% 92%;
+    --muted-foreground: 180 5% 40%;
+
+    --accent: 330 80% 84%;
+    --accent-foreground: 330 70% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 33% 88%;
+    --input: 40 33% 88%;
+    --ring: 175 70% 41%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 180 15% 15%;
+    --foreground: 40 33% 95%;
+
+    --card: 180 15% 18%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 180 15% 18%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 175 70% 41%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 15% 25%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 180 15% 25%;
+    --muted-foreground: 40 33% 80%;
+
+    --accent: 330 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 33% 95%;
+
+    --border: 180 15% 25%;
+    --input: 180 15% 25%;
+    --ring: 175 70% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
